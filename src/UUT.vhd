@@ -71,22 +71,22 @@ architecture counter_architecture of counter is
     -- Control signals
     signal data : std_logic_vector(N-1 downto 0);
     signal u_next_data : unsigned(N-1 downto 0);
-    signal is_last : boolean;
+    signal is_last_to_count : boolean;
 
 begin
     
     -- Values
     o_data <= data;
-    is_last <= unsigned(data) = unsigned(i_max) - 1;
+    is_last_to_count <= unsigned(data) = unsigned(i_max) - 1;
     
     -- Data transition
-    data_update : process(i_clk, i_rst, is_last)
+    data_update : process(i_clk, i_rst, is_last_to_count)
     begin
         if i_rst = '1' then
             data <= RESET_DATA;
         elsif rising_edge(i_clk) then
             if i_we = '1' then
-                if is_last then
+                if is_last_to_count then
                     data <= RESET_DATA;
                 else
                     data <= std_logic_vector(unsigned(data) + 1);
@@ -95,12 +95,12 @@ begin
         end if;
     end process;
     
-    -- is_last Transition
-    null_update : process(i_rst, is_last)
+    -- is_last_to_count Transition
+    null_update : process(i_rst, is_last_to_count)
     begin
         if i_rst = '1' then
             o_last <= '0';
-        elsif is_last then
+        elsif is_last_to_count then
             o_last <= '1';
         else
             o_last <= '0';
@@ -108,7 +108,6 @@ begin
     end process;
     
 end counter_architecture;
-
 -- ======================================= PROJECT =======================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -168,17 +167,21 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 	signal curr_state, next_state : STATE_TYPE;
 	
 	-- Registers signals
-	signal bitmask_reg_o, ev_point_reg_x_o, ev_point_reg_y_o, current_x_o, current_y_o : std_logic_vector(7 downto 0);
+	signal bitmask_reg_o, ev_point_reg_x_o, ev_point_reg_y_o, current_x_o, current_y_o, output_o : std_logic_vector(7 downto 0);
 	
 	-- Counter signals
 	constant MAX_ADDRESS : std_logic_vector := "0000000000010001"; --17
 	signal new_address : std_logic_vector(15 downto 0);
-	signal is_last : std_logic;
+	signal is_last_to_count : std_logic;
+	
 	-- Control signals 
     signal master_rst, must_rst : std_logic;
 	signal reg_params_we : std_logic_vector(4 downto 0);
 	signal increase_address : std_logic;
 	
+	-- Calculation signals
+	signal output : std_logic_vector(7 downto 0);
+
 	
 begin
 	-- Registers mapping
@@ -195,7 +198,7 @@ begin
 		
 	-- Counters mapping
 	address_counter : counter
-       port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>increase_address, i_max=>MAX_ADDRESS, o_last=>is_last, o_data=>new_address);
+       port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>increase_address, i_max=>MAX_ADDRESS, o_last=>is_last_to_count, o_data=>new_address);
 	   
 	-- Comparator // to implement
 	
@@ -257,8 +260,8 @@ begin
 		constant DEFAULT_ADDRESS     : std_logic_vector(15 downto 0)    := (others => '0');
 		
 		-- Control variables
-        variable data : std_logic_vector(7 downto 0);
-		variable next_address : std_logic_vector(15 downto 0);
+        variable output : std_logic_vector(7 downto 0);
+		variable x_sub, y_sub, x_y_sub_sum, min_distance : std_logic_vector(7 downto 0);
 		
 		begin			 
 			case curr_state is
@@ -296,11 +299,46 @@ begin
 				when EVALUATION_POINT_Y => -- IN FASE DI IMPLEMENTAZIONE CORRETTA
 					o_en <= '1';
 					o_we <= '0';
-					o_address <= next_address;
+					o_address <= new_address;
 					reg_params_we <= "00100";
+					increase_address <= '1';
+					o_data <= DEFAULT_DATA;
+					o_done <= '0';
+				when NEXT_X =>
+					o_en <= '1';
+					o_we <= '0';
+					o_address <= new_address;
+					reg_params_we <= "01000";
+					increase_address <= '1';
+					o_data <= DEFAULT_DATA;
+					o_done <= '0';
+				when NEXT_Y =>
+					o_en <= '1';
+					o_we <= '0';
+					o_address <= new_address;
+					reg_params_we <= "10000";
+					increase_address <= '1';
+					o_data <= DEFAULT_DATA;
+					o_done <= '0';
+				when CALC_DISTANCE =>
+				    x_sub :=  std_logic_vector(unsigned(ev_point_reg_x_o) - unsigned(current_x_o));
+					y_sub := std_logic_vector(unsigned(ev_point_reg_y_o) - unsigned(current_y_o));
+					x_y_sub_sum := std_logic_vector(unsigned(x_sub) + unsigned(y_sub));
+					o_en <= '0';
+					o_we <= '0';
+					o_address <= new_address;
+					reg_params_we <= "00000";
 					increase_address <= '0';
 					o_data <= DEFAULT_DATA;
-					o_done <= '1';
+					o_done <= '0';
+				when CHECK_DISTANCE => -- IN LAVORAZIONE
+				    o_en <= '0';
+					o_we <= '0';
+					o_address <= new_address;
+					reg_params_we <= "00000";
+					increase_address <= '0';
+					o_data <= DEFAULT_DATA;
+					o_done <= '0';
 				when others => -- IN FASE DI IMPLEMENTAZIONE CORRETTA
 				    o_en <= '0';				   				
 			end case;
