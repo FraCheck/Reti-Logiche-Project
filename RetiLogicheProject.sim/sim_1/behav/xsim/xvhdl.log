@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'reg'
-INFO: [VRFC 10-3107] analyzing entity 'counter'
-INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/Testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_tb'

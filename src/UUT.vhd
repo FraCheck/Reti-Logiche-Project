@@ -168,7 +168,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 	signal curr_state, next_state : STATE_TYPE;
 	
 	-- Registers signals
-	signal bitmask_reg_o, ev_point_reg_x_o, ev_point_reg_y_o, current_x_o, current_y_o, output_o : std_logic_vector(7 downto 0);
+	signal bitmask_reg_o, ev_point_reg_x_o, ev_point_reg_y_o, current_x_o, current_y_o: std_logic_vector(7 downto 0);
 	
 	-- Counter signals
 	constant MAX_ADDRESS : std_logic_vector := "0000000000010001"; --17
@@ -281,17 +281,19 @@ begin
 						o_we <= '0';
 						o_address <= BITMASK_ADDRESS;
 						reg_params_we <= "00000";
+						must_rst <= '0';
 					else
 						o_en <= '0';
 						o_we <= '0';
 						o_address <= DEFAULT_ADDRESS;
 						reg_params_we <= "00000";
+						must_rst <= '0';
 					end if;
 					increase_address <= '0';
 					shift_mask <= "00000001";
 					min_distance <= "111111111";
 					output <= "00000000";
-					must_rst <= '0';
+					
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when BITMASK_READ =>
@@ -385,7 +387,7 @@ begin
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when CHECK_DISTANCE => -- IN LAVORAZIONE
-				    if (old_shift_mask and bitmask_reg_o) >= DEFAULT_DATA then
+				    if to_integer(unsigned(old_shift_mask and bitmask_reg_o)) > 0 then
 				        if x_y_sub_sum < std_logic_vector(unsigned(min_distance)) then
 				            output <= std_logic_vector(unsigned(old_shift_mask));
 				            min_distance <=  std_logic_vector(unsigned(x_y_sub_sum));
@@ -419,8 +421,8 @@ begin
 				    o_address <= DEFAULT_ADDRESS;
 				    reg_params_we <= "00000";
 				    increase_address <= '0';
-				    must_rst <= '1';
-				    output <= output;
+				    must_rst <= '0';
+				    --output <= output;
 				    o_data <= DEFAULT_DATA;
 				    o_done <= '1';				   				
 			end case;

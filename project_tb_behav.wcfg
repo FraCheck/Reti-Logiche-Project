@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="701545500fs"></ZoomStartTime>
-      <ZoomEndTime time="1433545501fs"></ZoomEndTime>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="36900000001fs"></ZoomEndTime>
       <Cursor1Time time="950000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="196"></NameColumnWidth>
-      <ValueColumnWidth column_width="114"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="43" />
+   <WVObjectSize size="42" />
    <wvobject fp_name="/project_tb/tb_done" type="logic">
       <obj_property name="ElementShortName">tb_done</obj_property>
       <obj_property name="ObjectShortName">tb_done</obj_property>
@@ -142,10 +142,6 @@
    <wvobject fp_name="/project_tb/UUT/increase_address" type="logic">
       <obj_property name="ElementShortName">increase_address</obj_property>
       <obj_property name="ObjectShortName">increase_address</obj_property>
-   </wvobject>
-   <wvobject fp_name="/project_tb/UUT/output_o" type="array">
-      <obj_property name="ElementShortName">output_o[7:0]</obj_property>
-      <obj_property name="ObjectShortName">output_o[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/project_tb/UUT/is_last_to_count" type="logic">
       <obj_property name="ElementShortName">is_last_to_count</obj_property>

@@ -1,0 +1,7 @@
+Running: xsim.dir/autogen_test_bench_15_func_synth/xsimk.exe -simmode gui -wdb autogen_test_bench_15_func_synth.wdb -simrunnum 0 -socket 53004
+Design successfully loaded
+Design Loading Memory Usage: 7840 KB (Peak: 7840 KB)
+Design Loading CPU Usage: 61 ms
+Simulation completed
+Simulation Memory Usage: 11792 KB (Peak: 11792 KB)
+Simulation CPU Usage: 124 ms
