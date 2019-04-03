@@ -255,7 +255,7 @@ begin
     end process;
 	
 	-- Output transition
-    output_update : process(curr_state, i_start, i_data, bitmask_reg_o,ev_x_9,ev_y_9,current_x_9, current_y_9)
+    output_update : process(curr_state, i_start, i_data, bitmask_reg_o,ev_x_9,ev_y_9,current_x_9, current_y_9, new_address)
         
         -- Constant signals
 			-- Data

@@ -6,3 +6,5 @@ INFO: [VRFC 10-3107] analyzing entity 'reg_1'
 INFO: [VRFC 10-3107] analyzing entity 'reg_2'
 INFO: [VRFC 10-3107] analyzing entity 'reg_3'
 INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/Testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_tb'

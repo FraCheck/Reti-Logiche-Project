@@ -1,5 +1,0 @@
-Vivado Simulator 2018.3
-Time resolution is 1 ps
-Failure: Simulation Ended!, TEST PASSATO
-Time: 4150 ns  Iteration: 3  Process: /project_tb/test  File: C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/Testbench.vhd
-$finish called at time : 4150 ns : File "C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/Testbench.vhd" Line 113
