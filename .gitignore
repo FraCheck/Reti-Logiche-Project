@@ -59,3 +59,6 @@ RetiLogicheProject.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib/reg.vdb
 RetiLogicheProject.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib/shifter.vdb
 RetiLogicheProject.sim/sim_1/behav/xsim/xvhdl.log
 RetiLogicheProject.sim/sim_1/behav/xsim/xvhdl.pb
+RetiLogicheProject.xpr
+RetiLogicheProject.runs/.jobs/vrs_config_3.xml
+RetiLogicheProject.runs/synth_1/.vivado.begin.rst

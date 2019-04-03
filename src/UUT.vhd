@@ -66,7 +66,7 @@ end counter;
 architecture counter_architecture of counter is
 
     -- Reset Data
-    constant RESET_DATA : std_logic_vector(N-1 downto 0) := (others => '0');
+    constant RESET_DATA : std_logic_vector(N-1 downto 0) := "0000000000000001";
 
     -- Control signals
     signal data : std_logic_vector(N-1 downto 0);
@@ -293,7 +293,6 @@ begin
 					shift_mask <= "00000001";
 					min_distance <= "111111111";
 					output <= "00000000";
-					
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when BITMASK_READ =>
@@ -312,7 +311,7 @@ begin
 					o_we <= '0';
 					o_address <= EVALUATION_POINT_ADDRESS_Y;
 					reg_params_we <= "00010";
-					increase_address <= '1';
+					increase_address <= '0';
 					must_rst <= '0';
 					shift_mask <= "00000001";
 					output <= output;

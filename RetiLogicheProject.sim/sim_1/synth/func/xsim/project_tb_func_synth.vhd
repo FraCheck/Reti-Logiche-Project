@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sat Mar 30 19:06:15 2019
--- Host        : FRA-PC running 64-bit major release  (build 9200)
+-- Date        : Wed Apr  3 14:47:37 2019
+-- Host        : FRA-LAPTOP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
---               D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/func/xsim/project_tb_func_synth.vhd
+--               C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/func/xsim/project_tb_func_synth.vhd
 -- Design      : project_reti_logiche
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -92,24 +92,23 @@ architecture STRUCTURE of counter is
   signal \NLW_is_last_to_count_carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_is_last_to_count_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
 begin
-\data[0]_i_1\: unisim.vcomponents.LUT4
+\data[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"FFFE"
+      INIT => X"FE"
     )
         port map (
-      I0 => Q(6),
-      I1 => Q(3),
-      I2 => Q(1),
-      I3 => Q(2),
+      I0 => Q(3),
+      I1 => Q(2),
+      I2 => Q(6),
       O => increase_address
     );
 \data[0]_i_3\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"2"
+      INIT => X"E"
     )
         port map (
-      I0 => data_reg(0),
-      I1 => \is_last_to_count__5\,
+      I0 => \is_last_to_count__5\,
+      I1 => data_reg(0),
       O => \data[0]_i_3_n_0\
     );
 \data[0]_i_4\: unisim.vcomponents.LUT2
@@ -141,7 +140,7 @@ begin
     );
 \data[0]_i_7\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
+      INIT => X"D"
     )
         port map (
       I0 => data_reg(0),
@@ -256,15 +255,15 @@ begin
       I1 => \is_last_to_count__5\,
       O => \data[8]_i_5_n_0\
     );
-\data_reg[0]\: unisim.vcomponents.FDCE
+\data_reg[0]\: unisim.vcomponents.FDPE
     generic map(
-      INIT => '0'
+      INIT => '1'
     )
         port map (
       C => CLK,
       CE => increase_address,
-      CLR => AR(0),
       D => \data_reg[0]_i_2_n_7\,
+      PRE => AR(0),
       Q => data_reg(0)
     );
 \data_reg[0]_i_2\: unisim.vcomponents.CARRY4
