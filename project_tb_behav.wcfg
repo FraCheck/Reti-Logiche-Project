@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="82200000001fs"></ZoomEndTime>
-      <Cursor1Time time="950000000fs"></Cursor1Time>
+      <ZoomStartTime time="385825500fs"></ZoomStartTime>
+      <ZoomEndTime time="1905825501fs"></ZoomEndTime>
+      <Cursor1Time time="1083826000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="196"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="48" />
    <wvobject fp_name="/project_tb/tb_done" type="logic">
       <obj_property name="ElementShortName">tb_done</obj_property>
       <obj_property name="ObjectShortName">tb_done</obj_property>
@@ -167,24 +167,48 @@
       <obj_property name="ElementShortName">shift_mask[7:0]</obj_property>
       <obj_property name="ObjectShortName">shift_mask[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/project_tb/UUT/MAX_ADDRESS" type="array">
-      <obj_property name="ElementShortName">MAX_ADDRESS[0:15]</obj_property>
-      <obj_property name="ObjectShortName">MAX_ADDRESS[0:15]</obj_property>
+   <wvobject fp_name="/project_tb/UUT/shift_mask_prev" type="array">
+      <obj_property name="ElementShortName">shift_mask_prev[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_mask_prev[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/project_tb/UUT/old_shift_mask" type="array">
+      <obj_property name="ElementShortName">old_shift_mask[7:0]</obj_property>
+      <obj_property name="ObjectShortName">old_shift_mask[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/project_tb/UUT/old_shift_mask_prev" type="array">
+      <obj_property name="ElementShortName">old_shift_mask_prev[7:0]</obj_property>
+      <obj_property name="ObjectShortName">old_shift_mask_prev[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/project_tb/UUT/output" type="array">
       <obj_property name="ElementShortName">output[7:0]</obj_property>
       <obj_property name="ObjectShortName">output[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/project_tb/UUT/output_prev" type="array">
+      <obj_property name="ElementShortName">output_prev[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output_prev[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/project_tb/UUT/MAX_ADDRESS" type="array">
+      <obj_property name="ElementShortName">MAX_ADDRESS[0:15]</obj_property>
+      <obj_property name="ObjectShortName">MAX_ADDRESS[0:15]</obj_property>
+   </wvobject>
    <wvobject fp_name="/project_tb/UUT/x_y_sub_sum" type="array">
       <obj_property name="ElementShortName">x_y_sub_sum[8:0]</obj_property>
       <obj_property name="ObjectShortName">x_y_sub_sum[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/project_tb/UUT/x_y_sub_sum_prev" type="array">
+      <obj_property name="ElementShortName">x_y_sub_sum_prev[8:0]</obj_property>
+      <obj_property name="ObjectShortName">x_y_sub_sum_prev[8:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/project_tb/UUT/min_distance" type="array">
       <obj_property name="ElementShortName">min_distance[8:0]</obj_property>
       <obj_property name="ObjectShortName">min_distance[8:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/project_tb/UUT/old_shift_mask" type="array">
-      <obj_property name="ElementShortName">old_shift_mask[7:0]</obj_property>
-      <obj_property name="ObjectShortName">old_shift_mask[7:0]</obj_property>
+   <wvobject fp_name="/project_tb/UUT/min_distance_prev" type="array">
+      <obj_property name="ElementShortName">min_distance_prev[8:0]</obj_property>
+      <obj_property name="ObjectShortName">min_distance_prev[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/project_tb/UUT/save_signals" type="logic">
+      <obj_property name="ElementShortName">save_signals</obj_property>
+      <obj_property name="ObjectShortName">save_signals</obj_property>
    </wvobject>
 </wave_config>

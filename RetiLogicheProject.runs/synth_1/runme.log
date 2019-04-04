@@ -14,40 +14,42 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8632 
+INFO: Helper process launched with PID 11804 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 339.480 ; gain = 94.328
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 340.043 ; gain = 94.715
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'project_reti_logiche' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'project_reti_logiche' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:191]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'bitmask_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:191]
-INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:22]
+	Parameter M bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'reg_prev' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'master_preserv_reg' of component 'reg_prev' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:275]
+INFO: [Synth 8-638] synthesizing module 'reg_prev' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:31]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module '\reg ' (1#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:22]
+	Parameter M bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'reg_prev' (1#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:31]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'ev_point_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:193]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'bitmask_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:278]
+INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:79]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'ev_point_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:195]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (2#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:79]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'curr_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:197]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:280]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'curr_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:199]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:282]
+	Parameter N bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:284]
+	Parameter N bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:286]
 	Parameter N bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:48' bound to instance 'address_counter' of component 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:203]
-INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:66]
+INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:105' bound to instance 'address_counter' of component 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:290]
+INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:123]
 	Parameter N bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter' (2#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:66]
-WARNING: [Synth 8-614] signal 'output' is read in the process but is not in the sensitivity list [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:258]
-WARNING: [Synth 8-614] signal 'shift_mask' is read in the process but is not in the sensitivity list [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:258]
-WARNING: [Synth 8-614] signal 'old_shift_mask' is read in the process but is not in the sensitivity list [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:258]
-WARNING: [Synth 8-614] signal 'x_y_sub_sum' is read in the process but is not in the sensitivity list [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:258]
-WARNING: [Synth 8-614] signal 'min_distance' is read in the process but is not in the sensitivity list [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:258]
-INFO: [Synth 8-256] done synthesizing module 'project_reti_logiche' (3#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'counter' (3#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:123]
+INFO: [Synth 8-256] done synthesizing module 'project_reti_logiche' (4#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:191]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.473 ; gain = 150.320
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 396.426 ; gain = 151.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.473 ; gain = 150.320
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 396.426 ; gain = 151.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -55,7 +57,7 @@ Start Loading Part and Timing Information
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.473 ; gain = 150.320
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 396.426 ; gain = 151.098
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'project_reti_logiche'
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
@@ -63,25 +65,20 @@ INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too s
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   reset |                       0000000001 |                             0000
-            bitmask_read |                       0000000010 |                             0001
-      evaluation_point_x |                       0000000100 |                             0010
-      evaluation_point_y |                       0000001000 |                             0011
-                  next_x |                       0000010000 |                             0100
-                  next_y |                       0000100000 |                             0101
-           calc_distance |                       0001000000 |                             0110
-          check_distance |                       0010000000 |                             0111
-                   write |                       0100000000 |                             1000
-                    done |                       1000000000 |                             1001
+                   reset |                             0000 |                             0000
+            bitmask_read |                             0001 |                             0001
+      evaluation_point_x |                             0010 |                             0010
+      evaluation_point_y |                             0011 |                             0011
+                  next_x |                             0100 |                             0100
+                  next_y |                             0101 |                             0101
+           calc_distance |                             0110 |                             0110
+          check_distance |                             0111 |                             0111
+                   write |                             1000 |                             1000
+                    done |                             1001 |                             1001
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'project_reti_logiche'
-WARNING: [Synth 8-327] inferring latch for variable 'min_distance_reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:294]
-WARNING: [Synth 8-327] inferring latch for variable 'x_y_sub_sum_reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:359]
-WARNING: [Synth 8-327] inferring latch for variable 'old_shift_mask_reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:351]
-WARNING: [Synth 8-327] inferring latch for variable 'output_reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:295]
-WARNING: [Synth 8-327] inferring latch for variable 'shift_mask_reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:293]
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'project_reti_logiche'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 395.473 ; gain = 150.320
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 396.426 ; gain = 151.098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -97,19 +94,20 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     16 Bit       Adders := 1     
 	   3 Input      9 Bit       Adders := 4     
-	   2 Input      9 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 4     
 +---Registers : 
-	                8 Bit    Registers := 5     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 8     
 +---Muxes : 
 	  10 Input     16 Bit        Muxes := 1     
-	  10 Input     10 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 2     
-	  10 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	  10 Input      8 Bit        Muxes := 3     
-	   9 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	  10 Input      1 Bit        Muxes := 6     
+	   2 Input      9 Bit        Muxes := 2     
+	  10 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
+	  10 Input      8 Bit        Muxes := 4     
+	  10 Input      5 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -121,17 +119,22 @@ Module project_reti_logiche
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input      9 Bit       Adders := 4     
-	   2 Input      9 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 4     
 +---Muxes : 
 	  10 Input     16 Bit        Muxes := 1     
-	  10 Input     10 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 2     
-	  10 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	  10 Input      8 Bit        Muxes := 3     
-	   9 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	  10 Input      1 Bit        Muxes := 6     
+	   2 Input      9 Bit        Muxes := 2     
+	  10 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
+	  10 Input      8 Bit        Muxes := 4     
+	  10 Input      5 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 5     
+Module reg_prev 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
 Module reg 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -157,9 +160,8 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -172,7 +174,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -184,7 +186,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,7 +210,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -221,7 +223,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -233,25 +235,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -270,53 +272,52 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    37|
 |3     |LUT1   |     1|
-|4     |LUT2   |    98|
-|5     |LUT3   |    25|
-|6     |LUT4   |    61|
-|7     |LUT5   |     9|
-|8     |LUT6   |    70|
-|9     |FDCE   |    64|
-|10    |FDPE   |     2|
-|11    |LD     |    42|
-|12    |IBUF   |    11|
-|13    |OBUF   |    27|
+|4     |LUT2   |    93|
+|5     |LUT3   |     6|
+|6     |LUT4   |    73|
+|7     |LUT5   |    52|
+|8     |LUT6   |    81|
+|9     |FDCE   |    90|
+|10    |FDPE   |    12|
+|11    |IBUF   |    11|
+|12    |OBUF   |    27|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------------+--------+------+
-|      |Instance          |Module  |Cells |
-+------+------------------+--------+------+
-|1     |top               |        |   448|
-|2     |  address_counter |counter |    62|
-|3     |  bitmask_reg     |\reg    |    14|
-|4     |  curr_x_reg      |reg_0   |    47|
-|5     |  curr_y_reg      |reg_1   |    29|
-|6     |  ev_point_x_reg  |reg_2   |    57|
-|7     |  ev_point_y_reg  |reg_3   |    53|
-+------+------------------+--------+------+
++------+---------------------+---------+------+
+|      |Instance             |Module   |Cells |
++------+---------------------+---------+------+
+|1     |top                  |         |   484|
+|2     |  address_counter    |counter  |    62|
+|3     |  bitmask_reg        |\reg     |    29|
+|4     |  curr_x_reg         |reg_0    |    39|
+|5     |  curr_y_reg         |reg_1    |    35|
+|6     |  ev_point_x_reg     |reg_2    |    72|
+|7     |  ev_point_y_reg     |reg_3    |    48|
+|8     |  master_preserv_reg |reg_prev |   151|
++------+---------------------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 604.500 ; gain = 359.348
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 646.836 ; gain = 401.508
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 690.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 695.117 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 42 instances were transformed.
-  LD => LDCE: 42 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 690.684 ; gain = 445.531
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 690.684 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 695.117 ; gain = 449.789
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 695.117 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1/project_reti_logiche.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_reti_logiche_utilization_synth.rpt -pb project_reti_logiche_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr  3 15:18:40 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  4 23:24:54 2019...

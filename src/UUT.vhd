@@ -1,3 +1,60 @@
+-- REGISTER SIGNALs PRESERVING
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity reg_prev is
+    generic (
+        --Data size
+            N : integer := 8;
+            M : integer := 9
+        );
+        port(
+            -- Input
+            i_clk : in std_logic;
+            i_rst : in std_logic;
+            i_we : in std_logic;
+            i_data1 : in std_logic_vector(N-1 downto 0);
+            i_data2 : in std_logic_vector(N-1 downto 0);
+            i_data3 : in std_logic_vector(N-1 downto 0);
+            i_data4 : in std_logic_vector(M-1 downto 0);
+            i_data5 : in std_logic_vector(M-1 downto 0);
+            
+            -- Output
+            o_data1 : out std_logic_vector(N-1 downto 0);
+            o_data2 : out std_logic_vector(N-1 downto 0);
+            o_data3 : out std_logic_vector(N-1 downto 0);
+            o_data4 : out std_logic_vector(M-1 downto 0);
+            o_data5 : out std_logic_vector(M-1 downto 0)
+        );
+end reg_prev;
+
+architecture reg_prev_arch of reg_prev is
+    -- Reset data
+    constant RESET_DATA : std_logic_vector(N-1 downto 0) := (others => '0');
+    constant RESET_DATA1 : std_logic_vector(M-1 downto 0) := (others => '0');
+    
+    begin   
+    -- Output
+    data_update : process (i_clk, i_rst, i_we, i_data1, i_data2, i_data3, i_data4, i_data5)
+    begin
+        if i_rst = '1' then
+            o_data1 <= "00000001";
+            o_data2 <= "00000001";
+            o_data3 <= RESET_DATA;
+            o_data4 <= RESET_DATA1;
+            o_data5 <= "111111111";
+        elsif rising_edge(i_clk) then
+            if i_we = '1' then
+                o_data1 <= i_data1;
+                o_data2 <= i_data2;
+                o_data3 <= i_data3;
+                o_data4 <= i_data4;
+                o_data5 <= i_data5;
+            end if;
+        end if;
+    end process;    
+end reg_prev_arch;
+
 -- ======================================= REGISTER =======================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -132,6 +189,29 @@ entity project_reti_logiche is
 end project_reti_logiche;
 
 architecture project_reti_logiche_Architecture of project_reti_logiche is
+	-- Register signals preserving comonent
+	component reg_prev is
+	   generic (
+	       N: integer := 8;
+	       M: integer := 9
+	       );
+	       port(
+	           i_clk : in std_logic;
+	           i_rst : in std_logic;
+	           i_we : in std_logic;
+	           i_data1 : in std_logic_vector(N-1 downto 0);
+	           i_data2 : in std_logic_vector(N-1 downto 0);
+	           i_data3 : in std_logic_vector(N-1 downto 0);
+	           i_data4 : in std_logic_vector(M-1 downto 0);
+	           i_data5 : in std_logic_vector(M-1 downto 0);
+	           o_data1 : out std_logic_vector(N-1 downto 0);
+	           o_data2 : out std_logic_vector(N-1 downto 0);
+	           o_data3 : out std_logic_vector(N-1 downto 0);
+	           o_data4 : out std_logic_vector(M-1 downto 0);
+	           o_data5 : out std_logic_vector(M-1 downto 0)
+	      );
+	end component;
+	      
 	-- Register component
     component reg is
         generic (
@@ -179,6 +259,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
     signal master_rst, must_rst : std_logic;
 	signal reg_params_we : std_logic_vector(4 downto 0);
 	signal increase_address : std_logic;
+	signal save_signals : std_logic;
 	
 	-- Calculation signals
 	signal output : std_logic_vector(7 downto 0);
@@ -186,7 +267,13 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 	signal ev_x_9, ev_y_9,current_x_9, current_y_9 : std_logic_vector(8 downto 0);
 	signal x_sub, y_sub, x_y_sub_sum, min_distance: std_logic_vector(8 downto 0);
 	
+    -- Preserving signals
+    signal output_prev, shift_mask_prev, old_shift_mask_prev : std_logic_vector(7 downto 0);
+    signal x_y_sub_sum_prev, min_distance_prev : std_logic_vector(8 downto 0);
 begin
+    -- Registers_preserving mappin
+    master_preserv_reg : reg_prev
+        port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>save_signals, i_data1=>shift_mask, i_data2=>old_shift_mask, i_data3=>output, i_data4=>x_y_sub_sum, i_data5=>min_distance, o_data1=>shift_mask_prev, o_data2=>old_shift_mask_prev, o_data3=>output_prev, o_data4=>x_y_sub_sum_prev, o_data5=>min_distance_prev);
 	-- Registers mapping
 	bitmask_reg : reg
         port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(0), i_data=>i_data, o_data=>bitmask_reg_o);
@@ -255,7 +342,7 @@ begin
     end process;
 	
 	-- Output transition
-    output_update : process(curr_state, i_start, i_data, bitmask_reg_o,ev_x_9,ev_y_9,current_x_9, current_y_9, new_address)
+    output_update : process(curr_state, i_start, i_data, bitmask_reg_o,ev_x_9,ev_y_9,current_x_9, current_y_9, new_address, output_prev, shift_mask_prev, x_y_sub_sum_prev, min_distance_prev, old_shift_mask_prev,shift_mask, old_shift_mask, output, x_y_sub_sum, min_distance )
         
         -- Constant signals
 			-- Data
@@ -280,19 +367,23 @@ begin
 						o_en <= '1';
 						o_we <= '0';
 						o_address <= BITMASK_ADDRESS;
+						save_signals <= '1';
 						reg_params_we <= "00000";
 						must_rst <= '0';
 					else
 						o_en <= '0';
 						o_we <= '0';
 						o_address <= DEFAULT_ADDRESS;
+						save_signals <= '0';
 						reg_params_we <= "00000";
 						must_rst <= '0';
 					end if;
 					increase_address <= '0';
+					old_shift_mask <= "00000001";
 					shift_mask <= "00000001";
-					min_distance <= "111111111";
 					output <= "00000000";
+					x_y_sub_sum <= "000000000";
+					min_distance <= "111111111";
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when BITMASK_READ =>
@@ -301,8 +392,12 @@ begin
 					o_address <= EVALUATION_POINT_ADDRESS_X;
 					reg_params_we <= "00001";
 					increase_address <= '0';
-					shift_mask <= "00000001";
-					output <= output;
+					save_signals <= '0';
+					old_shift_mask <= old_shift_mask_prev;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 					must_rst <= '0';
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
@@ -312,32 +407,43 @@ begin
 					o_address <= EVALUATION_POINT_ADDRESS_Y;
 					reg_params_we <= "00010";
 					increase_address <= '0';
+					save_signals <= '0';
 					must_rst <= '0';
-					shift_mask <= "00000001";
-					output <= output;
+					old_shift_mask <= old_shift_mask_prev;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when EVALUATION_POINT_Y =>
 					o_en <= '1';
 					o_we <= '0';
-					o_address <= new_address; -- 1
+					o_address <= new_address; 
 					reg_params_we <= "00100";
 					increase_address <= '1';
+					save_signals <= '0';
 					must_rst <= '0';
-					shift_mask <= "00000001";
-					output <= output;
+					old_shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when NEXT_X =>
 					o_en <= '1';
 					o_we <= '0';
-					o_address <= new_address; --2
+					o_address <= new_address; 
 					reg_params_we <= "01000";
 					increase_address <= '1';
-					-- QUI SHIFTA shift_mask
-				    shift_mask <= shift_mask;
+					save_signals <= '1';
 					must_rst <= '0';
-					output <= output;
+					old_shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when NEXT_Y =>
@@ -346,10 +452,13 @@ begin
 					o_address <= new_address;
 					reg_params_we <= "10000";
 					increase_address <= '0';
+					save_signals <= '0';
 					must_rst <= '0';
-					shift_mask <= shift_mask;
-				    old_shift_mask <= shift_mask;
-					output <= output;
+					old_shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when CALC_DISTANCE =>
@@ -373,6 +482,8 @@ begin
 				        x_y_sub_sum <= std_logic_vector(unsigned(unsigned(ev_y_9) - unsigned(current_y_9)));
 				    elsif ev_x_9 = current_x_9 and ev_y_9 < current_y_9 then
 				        x_y_sub_sum <= std_logic_vector(unsigned(unsigned(current_y_9) - unsigned(ev_y_9)));
+				    else
+				        x_y_sub_sum <= std_logic_vector(unsigned(unsigned(ev_x_9) - unsigned(current_x_9)) + unsigned(unsigned(ev_y_9) - unsigned(current_y_9)));
 				    end if;	
 					o_en <= '0';
 					o_we <= '0';
@@ -381,28 +492,39 @@ begin
 					increase_address <= '0';
 					must_rst <= '0';
 					--shift_mask <= std_logic_vector(unsigned(shift_mask) sll 1);
-					shift_mask <= std_logic_vector(shift_left(unsigned(old_shift_mask), 1));
-					output <= output;
+					save_signals <= '1';
+					shift_mask <= std_logic_vector(shift_left(unsigned(shift_mask_prev), 1));
+					old_shift_mask <= old_shift_mask_prev;
+					output <= output_prev;
+					min_distance <= min_distance_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when CHECK_DISTANCE => -- IN LAVORAZIONE
 				    if to_integer(unsigned(old_shift_mask and bitmask_reg_o)) > 0 then
-				        if x_y_sub_sum < std_logic_vector(unsigned(min_distance)) then
+				        if x_y_sub_sum < std_logic_vector(unsigned(min_distance_prev)) then
 				            output <= std_logic_vector(unsigned(old_shift_mask));
 				            min_distance <=  std_logic_vector(unsigned(x_y_sub_sum));
 				        elsif x_y_sub_sum = min_distance then
-				            output <= std_logic_vector(output or old_shift_mask);
+				            output <= std_logic_vector(output_prev or old_shift_mask);
+				            min_distance <= min_distance_prev;
+				        else
+				            output <= output_prev;
+				            min_distance <= min_distance_prev;
 				        end if;
 				    else
-				        output <= output;
+				        min_distance <= min_distance_prev;
+				        output <= output_prev;
 				    end if;
 				    o_en <= '1';
 					o_we <= '0';
 					o_address <= new_address;
 					reg_params_we <= "00000";
 					increase_address <= '1';
+					save_signals <= '1';
 					must_rst <= '0';
-					shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					old_shift_mask <= old_shift_mask_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
 					o_data <= DEFAULT_DATA;
 					o_done <= '0';
 				when WRITE =>
@@ -412,6 +534,12 @@ begin
 				    reg_params_we <= "00000";
 				    increase_address <= '0';
 				    must_rst <= '0';
+				    save_signals <= '0';
+				    old_shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 				    o_data <= output;
 				    o_done <= '0';
 				when DONE =>
@@ -420,8 +548,13 @@ begin
 				    o_address <= DEFAULT_ADDRESS;
 				    reg_params_we <= "00000";
 				    increase_address <= '0';
+				    save_signals <= '0';
 				    must_rst <= '0';
-				    --output <= output;
+				    old_shift_mask <= shift_mask;
+					shift_mask <= shift_mask_prev;
+					output <= output_prev;
+					x_y_sub_sum <= x_y_sub_sum_prev;
+					min_distance <= min_distance_prev;
 				    o_data <= DEFAULT_DATA;
 				    o_done <= '1';				   				
 			end case;

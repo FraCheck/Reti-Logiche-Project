@@ -13,6 +13,7 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
+Compiling architecture reg_prev_arch of entity xil_defaultlib.reg_prev [reg_prev_default]
 Compiling architecture reg_architecture of entity xil_defaultlib.reg [reg_default]
 Compiling architecture counter_architecture of entity xil_defaultlib.counter [counter_default]
 Compiling architecture project_reti_logiche_architecture of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
