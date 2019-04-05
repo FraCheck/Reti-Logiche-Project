@@ -20,25 +20,25 @@ signal   mem_we		        	: std_logic;
 type ram_type is array (65535 downto 0) of std_logic_vector(7 downto 0);
 
 -- come da esempio su specifica
-signal RAM: ram_type := (0 => std_logic_vector(to_unsigned( 33 , 8)),
-                         1 => std_logic_vector(to_unsigned( 33 , 8)),
-                         2 => std_logic_vector(to_unsigned( 33 , 8)),
-                         3 => std_logic_vector(to_unsigned( 33 , 8)),
-                         4 => std_logic_vector(to_unsigned( 33 , 8)),
-                         5 => std_logic_vector(to_unsigned( 33 , 8)),
-                         6 => std_logic_vector(to_unsigned( 33 , 8)),
-                         7 => std_logic_vector(to_unsigned( 33 , 8)),
-                         8 => std_logic_vector(to_unsigned( 33 , 8)),
-                         9 => std_logic_vector(to_unsigned( 33 , 8)),
-                         10 => std_logic_vector(to_unsigned( 33 , 8)),
-                         11 => std_logic_vector(to_unsigned( 33 , 8)),
-                         12 => std_logic_vector(to_unsigned( 33 , 8)),
-                         13 => std_logic_vector(to_unsigned( 33 , 8)),
-                         14 => std_logic_vector(to_unsigned( 33 , 8)),
-                         15 => std_logic_vector(to_unsigned( 33 , 8)),
-                         16 => std_logic_vector(to_unsigned( 33 , 8)),
-                         17 => std_logic_vector(to_unsigned( 33 , 8)),
-                         18 => std_logic_vector(to_unsigned( 33 , 8)),
+signal RAM: ram_type := (0 => std_logic_vector(to_unsigned( 150 , 8)),
+                         1 => std_logic_vector(to_unsigned( 245 , 8)),
+                         2 => std_logic_vector(to_unsigned( 240 , 8)),  -- 1° punto
+                         3 => std_logic_vector(to_unsigned( 185 , 8)),
+                         4 => std_logic_vector(to_unsigned( 120 , 8)),   -- 2° punto
+                         5 => std_logic_vector(to_unsigned( 120 , 8)),
+                         6 => std_logic_vector(to_unsigned( 184 , 8)),    -- 3° punto
+                         7 => std_logic_vector(to_unsigned( 255 , 8)),
+                         8 => std_logic_vector(to_unsigned( 255 , 8)),  -- 4° punto
+                         9 => std_logic_vector(to_unsigned( 23 , 8)),
+                         10 => std_logic_vector(to_unsigned( 80 , 8)),  -- 5° punto
+                         11 => std_logic_vector(to_unsigned( 160 , 8)),
+                         12 => std_logic_vector(to_unsigned( 2 , 8)),  -- 6° punto
+                         13 => std_logic_vector(to_unsigned( 249 , 8)),
+                         14 => std_logic_vector(to_unsigned( 100 , 8)),  -- 7° punto
+                         15 => std_logic_vector(to_unsigned( 102 , 8)),
+                         16 => std_logic_vector(to_unsigned( 203 , 8)),  -- 8° punto
+                         17 => std_logic_vector(to_unsigned( 255 , 8)),
+                         18 => std_logic_vector(to_unsigned( 255 , 8)),
 			 others => (others =>'0'));
 
 component project_reti_logiche is
@@ -108,7 +108,7 @@ begin
     wait until tb_done = '0';
 
     -- Maschera di output = 00010001
-    assert RAM(19) = std_logic_vector(to_unsigned( 33, 8)) report "TEST FALLITO" severity failure;
+    assert RAM(19) = std_logic_vector(to_unsigned( 130, 8)) report "TEST FALLITO" severity failure;
  
     assert false report "Simulation Ended!, TEST PASSATO" severity failure;
 end process test;

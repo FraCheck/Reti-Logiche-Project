@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/timing/xsim/project_tb_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module project_reti_logiche
+INFO: [VRFC 10-311] analyzing module reg
+INFO: [VRFC 10-311] analyzing module reg_0
+INFO: [VRFC 10-311] analyzing module reg_1
+INFO: [VRFC 10-311] analyzing module reg_2
+INFO: [VRFC 10-311] analyzing module reg_3
+INFO: [VRFC 10-311] analyzing module reg_prev
+INFO: [VRFC 10-311] analyzing module glbl
