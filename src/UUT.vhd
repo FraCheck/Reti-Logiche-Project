@@ -1,4 +1,4 @@
--- REGISTER SIGNALs PRESERVING
+-- ======================================= REGISTER SIGNALs PRESERVING =======================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -12,7 +12,7 @@ entity reg_prev is
             -- Input
             i_clk : in std_logic;
             i_rst : in std_logic;
-            i_we : in std_logic;
+            i_e : in std_logic;
             i_data1 : in std_logic_vector(N-1 downto 0);
             i_data2 : in std_logic_vector(N-1 downto 0);
             i_data3 : in std_logic_vector(N-1 downto 0);
@@ -35,7 +35,7 @@ architecture reg_prev_arch of reg_prev is
     
     begin   
     -- Output
-    data_update : process (i_clk, i_rst, i_we, i_data1, i_data2, i_data3, i_data4, i_data5)
+    data_update : process (i_clk, i_rst, i_e, i_data1, i_data2, i_data3, i_data4, i_data5)
     begin
         if i_rst = '1' then
             o_data1 <= "00000001";
@@ -44,7 +44,7 @@ architecture reg_prev_arch of reg_prev is
             o_data4 <= RESET_DATA1;
             o_data5 <= "111111111";
         elsif rising_edge(i_clk) then
-            if i_we = '1' then
+            if i_e = '1' then
                 o_data1 <= i_data1;
                 o_data2 <= i_data2;
                 o_data3 <= i_data3;
@@ -68,7 +68,7 @@ entity reg is
 		-- Input
         i_clk : in std_logic;
         i_rst : in std_logic;
-        i_we  : in std_logic;
+        i_e  : in std_logic;
         i_data : in std_logic_vector(N-1 downto 0);
         
         -- Output
@@ -84,12 +84,12 @@ architecture reg_architecture of reg is
 begin
     
     -- Output
-    data_update : process (i_clk, i_rst,i_data, i_we)
+    data_update : process (i_clk, i_rst,i_data, i_e)
     begin
         if i_rst = '1' then
             o_data <= RESET_DATA;
         elsif rising_edge(i_clk) then
-            if i_we = '1' then
+            if i_e = '1' then
                 o_data <= i_data;
             end if;
         end if;
@@ -111,7 +111,7 @@ entity counter is
 		-- Input
 		i_clk : in std_logic;
 		i_rst : in std_logic;
-		i_we : in std_logic;
+		i_e : in std_logic;
 		i_max : in std_logic_vector(N-1 downto 0);
             
 		-- Output
@@ -127,7 +127,6 @@ architecture counter_architecture of counter is
 
     -- Control signals
     signal data : std_logic_vector(N-1 downto 0);
-    signal u_next_data : unsigned(N-1 downto 0);
     signal is_last_to_count : boolean;
 
 begin
@@ -142,7 +141,7 @@ begin
         if i_rst = '1' then
             data <= RESET_DATA;
         elsif rising_edge(i_clk) then
-            if i_we = '1' then
+            if i_e = '1' then
                 if is_last_to_count then
                     data <= RESET_DATA;
                 else
@@ -198,7 +197,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 	       port(
 	           i_clk : in std_logic;
 	           i_rst : in std_logic;
-	           i_we : in std_logic;
+	           i_e : in std_logic;
 	           i_data1 : in std_logic_vector(N-1 downto 0);
 	           i_data2 : in std_logic_vector(N-1 downto 0);
 	           i_data3 : in std_logic_vector(N-1 downto 0);
@@ -220,7 +219,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
         port(
             i_clk : in std_logic;
             i_rst : in std_logic;
-            i_we : in std_logic;
+            i_e : in std_logic;
             i_data : in std_logic_vector(N-1 downto 0);
             o_data : out std_logic_vector(N-1 downto 0)
         );
@@ -234,7 +233,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
         port(
             i_clk           : in std_logic;
             i_rst           : in std_logic;
-            i_we            : in std_logic;
+            i_e            : in std_logic;
             i_max           : in std_logic_vector(N-1 downto 0);
             o_last          : out std_logic;
             o_data          : out std_logic_vector(N-1 downto 0)
@@ -257,7 +256,7 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 
 	-- Control signals 
     signal master_rst, must_rst : std_logic;
-	signal reg_params_we : std_logic_vector(4 downto 0);
+	signal reg_params_e : std_logic_vector(4 downto 0);
 	signal increase_address : std_logic;
 	signal save_signals : std_logic;
 	
@@ -273,22 +272,22 @@ architecture project_reti_logiche_Architecture of project_reti_logiche is
 begin
     -- Registers_preserving mappin
     master_preserv_reg : reg_prev
-        port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>save_signals, i_data1=>shift_mask, i_data2=>old_shift_mask, i_data3=>output, i_data4=>x_y_sub_sum, i_data5=>min_distance, o_data1=>shift_mask_prev, o_data2=>old_shift_mask_prev, o_data3=>output_prev, o_data4=>x_y_sub_sum_prev, o_data5=>min_distance_prev);
+        port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>save_signals, i_data1=>shift_mask, i_data2=>old_shift_mask, i_data3=>output, i_data4=>x_y_sub_sum, i_data5=>min_distance, o_data1=>shift_mask_prev, o_data2=>old_shift_mask_prev, o_data3=>output_prev, o_data4=>x_y_sub_sum_prev, o_data5=>min_distance_prev);
 	-- Registers mapping
 	bitmask_reg : reg
-        port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(0), i_data=>i_data, o_data=>bitmask_reg_o);
+        port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>reg_params_e(0), i_data=>i_data, o_data=>bitmask_reg_o);
 	ev_point_x_reg : reg
-        port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(1), i_data=>i_data, o_data=>ev_point_reg_x_o);
+        port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>reg_params_e(1), i_data=>i_data, o_data=>ev_point_reg_x_o);
 	ev_point_y_reg : reg
-        port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(2), i_data=>i_data, o_data=>ev_point_reg_y_o);
+        port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>reg_params_e(2), i_data=>i_data, o_data=>ev_point_reg_y_o);
 	curr_x_reg : reg
-		port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(3), i_data=>i_data, o_data=>current_x_o);
+		port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>reg_params_e(3), i_data=>i_data, o_data=>current_x_o);
 	curr_y_reg : reg
-		port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>reg_params_we(4), i_data=>i_data, o_data=>current_y_o);
+		port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>reg_params_e(4), i_data=>i_data, o_data=>current_y_o);
 		
 	-- Counters mapping
 	address_counter : counter
-		port map(i_clk=>i_clk, i_rst=>master_rst, i_we=>increase_address, i_max=>MAX_ADDRESS, o_last=>is_last_to_count, o_data=>new_address);
+		port map(i_clk=>i_clk, i_rst=>master_rst, i_e=>increase_address, i_max=>MAX_ADDRESS, o_last=>is_last_to_count, o_data=>new_address);
 		
 	-- Generic signals
     master_rst <= i_rst or must_rst;
@@ -347,18 +346,12 @@ begin
         -- Constant signals
 			-- Data
 		constant DEFAULT_DATA : std_logic_vector(7 downto 0)     := (others => '0');
-        constant GND_DATA : std_logic_vector(7 downto 0)     := (others => '0');
 			-- Addresses
 		constant BITMASK_ADDRESS : std_logic_vector(15 downto 0)    := (others => '0');
 		constant EVALUATION_POINT_ADDRESS_X	:	std_logic_vector(15 downto 0)	:=	"0000000000010001"; -- 17
 		constant EVALUATION_POINT_ADDRESS_Y	:	std_logic_vector(15 downto 0)	:=	"0000000000010010"; -- 18
 		constant OUTPUT_DATA_ADDRESS : std_logic_vector(15 downto 0) := "0000000000010011"; -- 19
 		constant DEFAULT_ADDRESS     : std_logic_vector(15 downto 0)    := (others => '0');
-		
-		-- Control variables
-        --variable output : std_logic_vector(7 downto 0);
-		
-		
 		
 		begin			 
 			case curr_state is
@@ -368,14 +361,14 @@ begin
 						o_we <= '0';
 						o_address <= BITMASK_ADDRESS;
 						save_signals <= '1';
-						reg_params_we <= "00000";
+						reg_params_e <= "00000";
 						must_rst <= '0';
 					else
 						o_en <= '0';
 						o_we <= '0';
 						o_address <= DEFAULT_ADDRESS;
 						save_signals <= '0';
-						reg_params_we <= "00000";
+						reg_params_e <= "00000";
 						must_rst <= '0';
 					end if;
 					increase_address <= '0';
@@ -390,7 +383,7 @@ begin
 					o_en <= '1';
 					o_we <= '0';
 					o_address <= EVALUATION_POINT_ADDRESS_X;
-					reg_params_we <= "00001";
+					reg_params_e <= "00001";
 					increase_address <= '0';
 					save_signals <= '0';
 					old_shift_mask <= old_shift_mask_prev;
@@ -405,7 +398,7 @@ begin
 					o_en <= '1';
 					o_we <= '0';
 					o_address <= EVALUATION_POINT_ADDRESS_Y;
-					reg_params_we <= "00010";
+					reg_params_e <= "00010";
 					increase_address <= '0';
 					save_signals <= '0';
 					must_rst <= '0';
@@ -420,7 +413,7 @@ begin
 					o_en <= '1';
 					o_we <= '0';
 					o_address <= new_address; 
-					reg_params_we <= "00100";
+					reg_params_e <= "00100";
 					increase_address <= '1';
 					save_signals <= '0';
 					must_rst <= '0';
@@ -435,7 +428,7 @@ begin
 					o_en <= '1';
 					o_we <= '0';
 					o_address <= new_address; 
-					reg_params_we <= "01000";
+					reg_params_e <= "01000";
 					increase_address <= '1';
 					save_signals <= '1';
 					must_rst <= '0';
@@ -450,7 +443,7 @@ begin
 					o_en <= '0';
 					o_we <= '0';
 					o_address <= new_address;
-					reg_params_we <= "10000";
+					reg_params_e <= "10000";
 					increase_address <= '0';
 					save_signals <= '0';
 					must_rst <= '0';
@@ -488,7 +481,7 @@ begin
 					o_en <= '0';
 					o_we <= '0';
 					o_address <= new_address;
-					reg_params_we <= "00000";
+					reg_params_e <= "00000";
 					increase_address <= '0';
 					must_rst <= '0';
 					--shift_mask <= std_logic_vector(unsigned(shift_mask) sll 1);
@@ -518,7 +511,7 @@ begin
 				    o_en <= '1';
 					o_we <= '0';
 					o_address <= new_address;
-					reg_params_we <= "00000";
+					reg_params_e <= "00000";
 					increase_address <= '1';
 					save_signals <= '1';
 					must_rst <= '0';
@@ -531,7 +524,7 @@ begin
 				    o_en <= '1';
 				    o_we <= '1';
 				    o_address <= OUTPUT_DATA_ADDRESS;
-				    reg_params_we <= "00000";
+				    reg_params_e <= "00000";
 				    increase_address <= '0';
 				    must_rst <= '0';
 				    save_signals <= '0';
@@ -546,7 +539,7 @@ begin
 				    o_en <= '0';
 				    o_we <= '0';
 				    o_address <= DEFAULT_ADDRESS;
-				    reg_params_we <= "00000";
+				    reg_params_e <= "00000";
 				    increase_address <= '0';
 				    save_signals <= '0';
 				    must_rst <= '0';

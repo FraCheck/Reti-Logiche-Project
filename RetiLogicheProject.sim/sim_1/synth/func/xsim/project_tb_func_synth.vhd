@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Apr  5 12:49:40 2019
--- Host        : FRA-PC running 64-bit major release  (build 9200)
+-- Date        : Wed Apr 10 14:36:55 2019
+-- Host        : FRA-LAPTOP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
---               D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/func/xsim/project_tb_func_synth.vhd
+--               C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/func/xsim/project_tb_func_synth.vhd
 -- Design      : project_reti_logiche
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -2091,7 +2091,7 @@ architecture STRUCTURE of reg_2 is
   signal \^co\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal data2 : STD_LOGIC_VECTOR ( 8 to 8 );
   signal \^data4\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal i_we : STD_LOGIC;
+  signal i_e : STD_LOGIC;
   signal \o_data3[7]_i_10_n_0\ : STD_LOGIC;
   signal \o_data3[7]_i_8_n_0\ : STD_LOGIC;
   signal \o_data3[7]_i_9_n_0\ : STD_LOGIC;
@@ -2883,7 +2883,7 @@ begin
       I1 => \o_data_reg[0]_1\(3),
       I2 => \o_data_reg[0]_1\(1),
       I3 => \o_data_reg[0]_1\(0),
-      O => i_we
+      O => i_e
     );
 \o_data_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -2891,7 +2891,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(0),
       Q => \^o_data_reg[7]_4\(0)
@@ -2902,7 +2902,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(1),
       Q => \^o_data_reg[7]_4\(1)
@@ -2913,7 +2913,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(2),
       Q => \^o_data_reg[7]_4\(2)
@@ -2924,7 +2924,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(3),
       Q => \^o_data_reg[7]_4\(3)
@@ -2935,7 +2935,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(4),
       Q => \^o_data_reg[7]_4\(4)
@@ -2946,7 +2946,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(5),
       Q => \^o_data_reg[7]_4\(5)
@@ -2957,7 +2957,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(6),
       Q => \^o_data_reg[7]_4\(6)
@@ -2968,7 +2968,7 @@ begin
     )
         port map (
       C => CLK,
-      CE => i_we,
+      CE => i_e,
       CLR => AR(0),
       D => \o_data_reg[7]_5\(7),
       Q => \^o_data_reg[7]_4\(7)

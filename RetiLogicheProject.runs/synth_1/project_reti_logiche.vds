@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Apr  5 12:38:15 2019
-# Process ID: 9532
-# Current directory: D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1
+# Start of session at: Wed Apr 10 14:25:29 2019
+# Process ID: 6732
+# Current directory: C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1
 # Command line: vivado.exe -log project_reti_logiche.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_reti_logiche.tcl
-# Log file: D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1/project_reti_logiche.vds
-# Journal file: D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1\vivado.jou
+# Log file: C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1/project_reti_logiche.vds
+# Journal file: C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source project_reti_logiche.tcl -notrace
 Command: synth_design -top project_reti_logiche -part xc7a200tsbg484-1
@@ -15,39 +15,39 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10624 
+INFO: Helper process launched with PID 2204 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 363.574 ; gain = 100.609
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 340.039 ; gain = 69.598
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'project_reti_logiche' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'project_reti_logiche' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:190]
 	Parameter N bound to: 8 - type: integer 
 	Parameter M bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'reg_prev' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'master_preserv_reg' of component 'reg_prev' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:275]
-INFO: [Synth 8-638] synthesizing module 'reg_prev' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:31]
+INFO: [Synth 8-3491] module 'reg_prev' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:5' bound to instance 'master_preserv_reg' of component 'reg_prev' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:274]
+INFO: [Synth 8-638] synthesizing module 'reg_prev' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:31]
 	Parameter N bound to: 8 - type: integer 
 	Parameter M bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'reg_prev' (1#1) [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'reg_prev' (1#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:31]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'bitmask_reg' of component 'reg' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:278]
-INFO: [Synth 8-638] synthesizing module '\reg ' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:79]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'bitmask_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:277]
+INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:79]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module '\reg ' (2#1) [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:79]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (2#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:79]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_x_reg' of component 'reg' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:280]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:279]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_y_reg' of component 'reg' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:282]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'ev_point_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:281]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_x_reg' of component 'reg' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:284]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_x_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:283]
 	Parameter N bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'reg' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_y_reg' of component 'reg' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:286]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:62' bound to instance 'curr_y_reg' of component 'reg' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:285]
 	Parameter N bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'counter' declared at 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:105' bound to instance 'address_counter' of component 'counter' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:290]
-INFO: [Synth 8-638] synthesizing module 'counter' [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:123]
+INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:105' bound to instance 'address_counter' of component 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:289]
+INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:123]
 	Parameter N bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter' (3#1) [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:123]
-INFO: [Synth 8-256] done synthesizing module 'project_reti_logiche' (4#1) [D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd:191]
+INFO: [Synth 8-256] done synthesizing module 'counter' (3#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:123]
+INFO: [Synth 8-256] done synthesizing module 'project_reti_logiche' (4#1) [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd:190]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 419.160 ; gain = 156.195
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.777 ; gain = 125.336
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -60,41 +60,41 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 419.160 ; gain = 156.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.777 ; gain = 125.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 419.160 ; gain = 156.195
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.777 ; gain = 125.336
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
-Finished Parsing XDC File [D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
+Parsing XDC File [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
+Finished Parsing XDC File [C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 800.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 777.055 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 800.641 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 800.641 ; gain = 0.004
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 777.055 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 777.055 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'project_reti_logiche'
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
@@ -115,7 +115,7 @@ INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too s
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'project_reti_logiche'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,7 +196,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,13 +208,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 800.641 ; gain = 537.676
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 777.055 ; gain = 506.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 864.078 ; gain = 601.113
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 843.234 ; gain = 572.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -226,7 +226,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -250,7 +250,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -263,7 +263,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -275,25 +275,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -337,27 +337,27 @@ Report Instance Areas:
 |8     |  master_preserv_reg |reg_prev |   174|
 +------+---------------------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 865.086 ; gain = 220.641
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 865.086 ; gain = 602.121
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 844.242 ; gain = 192.523
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 844.242 ; gain = 573.801
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 37 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 865.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 844.242 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 30 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 865.086 ; gain = 615.203
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 865.086 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 844.242 ; gain = 573.801
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 844.242 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1/project_reti_logiche.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.runs/synth_1/project_reti_logiche.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_reti_logiche_utilization_synth.rpt -pb project_reti_logiche_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 12:38:50 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 10 14:26:16 2019...

@@ -22,13 +22,13 @@ create_project -in_memory -part xc7a200tsbg484-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.cache/wt [current_project]
-set_property parent.project_path D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.cache/wt [current_project]
+set_property parent.project_path C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo d:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.cache/ip [current_project]
+set_property ip_output_repo c:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib D:/ProgettoRetiLogiche/Reti-Logiche-Project/src/UUT.vhd
+read_vhdl -library xil_defaultlib C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/src/UUT.vhd
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -37,8 +37,8 @@ read_vhdl -library xil_defaultlib D:/ProgettoRetiLogiche/Reti-Logiche-Project/sr
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc
-set_property used_in_implementation false [get_files D:/ProgettoRetiLogiche/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
+read_xdc C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc
+set_property used_in_implementation false [get_files C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.srcs/constrs_1/new/timing.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
