@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Apr 10 14:36:55 2019
+-- Date        : Thu May  9 17:22:30 2019
 -- Host        : FRA-LAPTOP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Users/FraCh/Documents/GitHub/Reti-Logiche-Project/RetiLogicheProject.sim/sim_1/synth/func/xsim/project_tb_func_synth.vhd
